@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - Student Affairs System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Student Affairs</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="student_services.html">Student Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="events_activities.html">Events & Activities</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact_us.html">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">Register</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="login.html">Log In <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <aside class="col-md-3">
+                <div class="aside-title">Quick Links</div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action text-white">Academic Email</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white">Transfer Service</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white">Course Results</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white">Student Activities</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white">School Schedule</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white">Medical Services</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white">Military Education</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white">Survey</a>
+                </div>
+            </aside>
+            <div class="col-md-9">
+                <div class="jumbotron">
+                    <h1 class="display-4">Log In</h1>
+                    <p class="lead">Choose your login method below.</p>
+                </div>
+
+                <div class="mb-4 text-white" style="background-color: #424242;">
+                    <div class="login-header p-3">
+                        <h3>Log In</h3>
+                    </div>
+                    <div class="p-3">
+                        <form>
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginType">Log In As</label>
+                                <select class="form-control" id="loginType">
+                                    <option value="student">Student</option>
+                                    <option value="admin">Administration</option>
+                                </select>
+                            </div>
+                            <div class="mt-4"></div>
+                                <button type="submit" class="btn btn-primary" style="margin-left: 20%; margin-right: 20%; width: 60%;">Log In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

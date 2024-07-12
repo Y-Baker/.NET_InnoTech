@@ -1,0 +1,52 @@
+body {
+    padding-top: 12px;
+    background-color: #171717;
+    color: #ffffff;
+}
+
+.navbar {
+    background-color: #12141a !important;
+}
+
+.navbar .nav-link:hover {
+    color: #adb5bd;
+}
+
+.jumbotron {
+    background-color: #424242;
+    text-align: center;
+}
+
+.carousel-inner .carousel-item {
+    background-color: #424242;
+    border-radius: 5px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+}
+
+.aside-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.list-group-item {
+    background-color: #424242;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.list-group-item:hover {
+    background-color: #676767;
+    color: #ffffff;
+}
+
+.login-header {
+    background-color: #333333;
+    border-bottom: 1px solid #424242;
+}
