@@ -1,0 +1,394 @@
+Report Started at 7/27/2024 6:51:37 PM
+
+Report 1		 Time: 7/27/2024 6:52:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.6756849%
+		Available Memory: 5655 MB
+		Number of Running Processes: 312 process
+
+Report 2		 Time: 7/27/2024 6:53:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 3.6857285%
+		Available Memory: 4479 MB
+		Number of Running Processes: 326 process
+
+Report 3		 Time: 7/27/2024 6:54:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 1.2003554%
+		Available Memory: 3343 MB
+		Number of Running Processes: 344 process
+
+Report 4		 Time: 7/27/2024 6:55:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 2.141909%
+		Available Memory: 3148 MB
+		Number of Running Processes: 344 process
+
+Report 5		 Time: 7/27/2024 6:56:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 2.3037736%
+		Available Memory: 2408 MB
+		Number of Running Processes: 356 process
+
+Report 6		 Time: 7/27/2024 6:57:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.58381957%
+		Available Memory: 2436 MB
+		Number of Running Processes: 353 process
+
+Report 7		 Time: 7/27/2024 6:58:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.3603605%
+		Available Memory: 2369 MB
+		Number of Running Processes: 352 process
+
+Report 8		 Time: 7/27/2024 6:59:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.7051835%
+		Available Memory: 2600 MB
+		Number of Running Processes: 344 process
+
+Report 9		 Time: 7/27/2024 7:00:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.7433346%
+		Available Memory: 2529 MB
+		Number of Running Processes: 344 process
+
+Report 10		 Time: 7/27/2024 7:01:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.94202375%
+		Available Memory: 2679 MB
+		Number of Running Processes: 337 process
+
+Report 11		 Time: 7/27/2024 7:02:40 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.44026774%
+		Available Memory: 2749 MB
+		Number of Running Processes: 334 process
+
+Report 12		 Time: 7/27/2024 7:03:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.41469452%
+		Available Memory: 2952 MB
+		Number of Running Processes: 332 process
+
+Report 13		 Time: 7/27/2024 7:04:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.4554151%
+		Available Memory: 3009 MB
+		Number of Running Processes: 333 process
+
+Report 14		 Time: 7/27/2024 7:05:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.7554264%
+		Available Memory: 2879 MB
+		Number of Running Processes: 338 process
+
+Report 15		 Time: 7/27/2024 7:06:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.5554498%
+		Available Memory: 2679 MB
+		Number of Running Processes: 336 process
+
+Report 16		 Time: 7/27/2024 7:07:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.71660686%
+		Available Memory: 2915 MB
+		Number of Running Processes: 335 process
+
+Report 17		 Time: 7/27/2024 7:08:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.52084047%
+		Available Memory: 2954 MB
+		Number of Running Processes: 333 process
+
+Report 18		 Time: 7/27/2024 7:09:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.31116748%
+		Available Memory: 3079 MB
+		Number of Running Processes: 333 process
+
+Report 19		 Time: 7/27/2024 7:10:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.31665683%
+		Available Memory: 2974 MB
+		Number of Running Processes: 333 process
+
+Report 20		 Time: 7/27/2024 7:11:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.6539538%
+		Available Memory: 2940 MB
+		Number of Running Processes: 329 process
+
+Report 21		 Time: 7/27/2024 7:12:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.4098626%
+		Available Memory: 3196 MB
+		Number of Running Processes: 325 process
+
+Report 22		 Time: 7/27/2024 7:13:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.51298094%
+		Available Memory: 3339 MB
+		Number of Running Processes: 323 process
+
+Report 23		 Time: 7/27/2024 7:14:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.60412806%
+		Available Memory: 3292 MB
+		Number of Running Processes: 323 process
+
+Report 24		 Time: 7/27/2024 7:15:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.5558333%
+		Available Memory: 3217 MB
+		Number of Running Processes: 323 process
+
+Report 25		 Time: 7/27/2024 7:16:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 1.3310534%
+		Available Memory: 3028 MB
+		Number of Running Processes: 329 process
+
+Report 26		 Time: 7/27/2024 7:17:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.99944276%
+		Available Memory: 3149 MB
+		Number of Running Processes: 328 process
+
+Report 27		 Time: 7/27/2024 7:18:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.48023158%
+		Available Memory: 3324 MB
+		Number of Running Processes: 324 process
+
+Report 28		 Time: 7/27/2024 7:19:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.6783468%
+		Available Memory: 3319 MB
+		Number of Running Processes: 324 process
+
+Report 29		 Time: 7/27/2024 7:20:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.80541533%
+		Available Memory: 3291 MB
+		Number of Running Processes: 324 process
+
+Report 30		 Time: 7/27/2024 7:21:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 1.29289%
+		Available Memory: 3083 MB
+		Number of Running Processes: 327 process
+
+Report 31		 Time: 7/27/2024 7:22:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.79038477%
+		Available Memory: 3455 MB
+		Number of Running Processes: 326 process
+
+Report 32		 Time: 7/27/2024 7:23:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.6842969%
+		Available Memory: 3576 MB
+		Number of Running Processes: 324 process
+
+Report 33		 Time: 7/27/2024 7:24:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 1.2827038%
+		Available Memory: 2928 MB
+		Number of Running Processes: 343 process
+
+Report 34		 Time: 7/27/2024 7:25:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.353146%
+		Available Memory: 2953 MB
+		Number of Running Processes: 339 process
+
+Report 35		 Time: 7/27/2024 7:26:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.4455975%
+		Available Memory: 2750 MB
+		Number of Running Processes: 347 process
+
+Report 36		 Time: 7/27/2024 7:27:37 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.85583854%
+		Available Memory: 3598 MB
+		Number of Running Processes: 340 process
+
+Report 37		 Time: 7/27/2024 7:30:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.8245237%
+		Available Memory: 2917 MB
+		Number of Running Processes: 353 process
+
+Report 38		 Time: 7/27/2024 7:31:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 1.2970308%
+		Available Memory: 4831 MB
+		Number of Running Processes: 307 process
+
+Report 39		 Time: 7/27/2024 7:32:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.7315668%
+		Available Memory: 5793 MB
+		Number of Running Processes: 297 process
+
+Report 40		 Time: 7/27/2024 7:33:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.05062387%
+		Available Memory: 5974 MB
+		Number of Running Processes: 296 process
+
+Report 41		 Time: 7/27/2024 7:34:41 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.19530514%
+		Available Memory: 6201 MB
+		Number of Running Processes: 295 process
+
+Report 42		 Time: 7/27/2024 7:35:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.07938765%
+		Available Memory: 6209 MB
+		Number of Running Processes: 292 process
+
+Report 43		 Time: 7/27/2024 7:36:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 1.4878285%
+		Available Memory: 5525 MB
+		Number of Running Processes: 301 process
+
+Report 44		 Time: 7/27/2024 7:37:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.6582302%
+		Available Memory: 5660 MB
+		Number of Running Processes: 296 process
+
+Report 45		 Time: 7/27/2024 7:38:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.20604104%
+		Available Memory: 6110 MB
+		Number of Running Processes: 292 process
+
+Report 46		 Time: 7/27/2024 7:39:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.88658905%
+		Available Memory: 6138 MB
+		Number of Running Processes: 292 process
+
+Report 47		 Time: 7/27/2024 7:40:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.5897422%
+		Available Memory: 6252 MB
+		Number of Running Processes: 290 process
+
+Report 48		 Time: 7/27/2024 7:41:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.78875816%
+		Available Memory: 6039 MB
+		Number of Running Processes: 295 process
+
+Report 49		 Time: 7/27/2024 7:42:39 PM
+		Machine Name: LAPTOP-I4MIVMB0
+		Operating System: Microsoft Windows NT 10.0.22631.0
+		Number of Processors: 16
+		CPU-Usage: 0.50156415%
+		Available Memory: 6057 MB
+		Number of Running Processes: 292 process
+
