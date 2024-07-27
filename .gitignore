@@ -1,5 +1,4 @@
 *.jpg
 *.docx
-*.sln
 bin/
 obj/
