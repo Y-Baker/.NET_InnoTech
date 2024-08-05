@@ -109,6 +109,7 @@ First you need for each object to use Activator to create a new instance of type
 Make all Controller inhurit from baseController and create new tables for doctors and teachers
 
 Test all CURD for each controller
+
 ---
 
 
