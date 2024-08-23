@@ -1,0 +1,30 @@
+@inject IJSRuntime _jsRuntime
+
+<div class="accordion" id="@accordionId">
+    @foreach (AccordionItem item in accordionItems ?? [])
+    {
+        // to make every item unique global (in case of two accordion in same page)
+        string itemId = $"accordion({accordionId})-{item.Id}";
+        string headerId = $"heading-{itemId}";
+        string collapseId = $"collapse-{itemId}";
+
+        <div class="accordion-item" id="@itemId">
+            <h2 class="accordion-header" id="@headerId">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#@collapseId" aria-expanded="true" aria-controls="@collapseId">
+                    @item.Id- @item.Title
+                </button>
+            </h2>
+            <div id="@collapseId" class="accordion-collapse collapse @(firstItem ? "show" : "")" data-bs-parent="@(alwaysOpen ? "" : ("#"+accordionId))">
+                <div class="accordion-body">
+                    @((MarkupString)(item.Description ?? ""))
+                </div>
+            </div>
+        </div>
+
+        firstItem = false;
+    }
+</div>
+
+
+
+
