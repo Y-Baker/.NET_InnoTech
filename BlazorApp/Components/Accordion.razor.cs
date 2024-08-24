@@ -1,4 +1,4 @@
-using BlazorApp.model;
+using BlazorApp.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 

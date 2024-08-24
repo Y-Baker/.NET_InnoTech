@@ -1,4 +1,4 @@
-using BlazorApp.model;
+using BlazorApp.Models;
 
 namespace BlazorApp.Pages
 {

@@ -1,4 +1,4 @@
-﻿namespace BlazorApp.model
+﻿namespace BlazorApp.Models
 {
     public class CardData
     {
