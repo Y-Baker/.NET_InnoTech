@@ -18,5 +18,7 @@ public partial class CardPage
         data.Add(cardData4);
         CardData cardData5 = new(title: "Card 5", linkRout: "/", linkText: "Back to Home", descr: defaultText);
         data.Add(cardData5);
+
+        await Task.CompletedTask;
     }
 }

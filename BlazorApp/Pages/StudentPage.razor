@@ -1,0 +1,57 @@
+﻿@page "/students"
+@namespace BlazorApp.Pages
+
+<PageTitle>Student</PageTitle>
+
+<h3>Student View</h3>
+
+<EditForm Model="@_student" OnValidSubmit="HandleValidSubmit">
+    <FluentValidationValidator />
+    <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <InputText class="form-control" @bind-Value="@_student.Name" />
+    </div>
+
+    <div class="mb-3">
+        <label for="mobile" class="form-label">Mobile:</label>
+        <InputText class="form-control" @bind-Value="@_student.Mobile" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Age:</label>
+        <InputNumber class="form-control" @bind-Value="@_student.Age" />
+    </div>
+
+    <ValidationSummary />
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+
+<h3>Registered Students</h3>
+<div class="container mt-5">
+    <h2>Bootstrap Table</h2>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Age</th>
+                <th scope="col">Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Student item in students)
+            {
+                <tr>
+                    <td scope="col">@item.Id</td>
+                    <td scope="col">@item.Name</td>
+                    <td scope="col">@item.Mobile</td>
+                    <td scope="col">@item.Age</td>
+                    <td scope="col"><a href="javascript:void(0)" onclick="@( ()=> EditStudent(item) )">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

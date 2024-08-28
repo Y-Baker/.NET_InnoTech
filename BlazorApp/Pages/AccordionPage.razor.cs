@@ -16,6 +16,7 @@ public partial class AccordionPage
             new AccordionItem(4, "Usage", "<em>Usage:</em> Details on how to use the application effectively."),
             new AccordionItem(5, "Support", "Information on how to get support and assistance.")
         };
-        accordion1 = new(items1, alwaysOpen: true);
+        accordion1 = new AccordionData(items1, alwaysOpen: true);
+        await Task.CompletedTask;
     }
 }
