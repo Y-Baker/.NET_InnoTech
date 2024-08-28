@@ -1,0 +1,15 @@
+﻿@page "/cards"
+
+<PageTitle>Cards</PageTitle>
+
+<h3>Cards</h3>
+<div class="row row-cols-1 row-cols-md-6 g-4">
+    @foreach (CardData cardData in data) {
+        <div class="col">
+            <Card cardData=@cardData />
+        </div>
+    }
+</div>
+
+
+
