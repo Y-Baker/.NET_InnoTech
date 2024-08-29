@@ -6,7 +6,10 @@ WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 //List<Teacher>? teachers = new List<Teacher>();
 //builder.Services.AddSingleton(teachers);
 
+// SQL Server
 //string connectingString = "Data Source=172.30.136.6;Initial Catalog=StudentsAffairsDB;User Id=root;Password=root;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;";
+
+// Mysql
 string connectingString = "Server=172.30.136.6;Database=StudentsAffairsDB;User=windows;Password=root;Connect Timeout=60;";
 
 
