@@ -1,67 +1,79 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@namespace StudentAffairs
+@inject IStringLocalizer<Resource> _localizer
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">Student Affairs</a>
+        <a class="navbar-brand" href="">@_localizer["StudentAffairs"]</a>
     </div>
 </div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" /> 
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
 
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
+    <nav class="d-flex flex-column h-100">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="/students" Match="NavLinkMatch.All">
-                Students
+                @_localizer["Students"]
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/email/Academic">
-                Academic Email
+            <NavLink class="nav-link" href="/doctors">
+                @_localizer["Doctors"]
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/transfer_service">
-                Transfer Service
+            <NavLink class="nav-link" href="/courses">
+                @_localizer["Courses"]
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/survey">
+                @_localizer["Survey"]
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/academic-email">
+                @_localizer["AcademicEmail"]
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="/results">
-                Course Results
+                @_localizer["CourseResults"]
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/activities">
-                Student Activities
+            <NavLink class="nav-link" href="/register-report">
+                @_localizer["RegistrationReport"]
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="/schedule">
-                School Schedule
+                @_localizer["Schedule"]
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="/medical">
-                Medical Services
+                @_localizer["MedicalServices"]
             </NavLink>
         </div>
-        
+
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="/military">
-                Military Education
-            </NavLink>
-        </div>
-        
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/servey">
-                Survey
+                @_localizer["Military"]
             </NavLink>
         </div>
 
+        <div class="flex-grow-1"></div>
+
+        <div class="nav-item px-3">
+            <CultureSelector />
+        </div>
     </nav>
 </div>
-

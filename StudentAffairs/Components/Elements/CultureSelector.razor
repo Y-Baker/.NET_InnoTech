@@ -1,0 +1,9 @@
+﻿@inject NavigationManager _navManager
+@namespace StudentAffairs
+
+<select class="form-control" @bind="SelectedCulture">
+    @foreach (CultureInfo culture in cultures)
+    {
+        <option value="@culture.Name">@culture.DisplayName</option>
+    }
+</select>

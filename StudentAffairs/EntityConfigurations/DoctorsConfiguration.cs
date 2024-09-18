@@ -11,8 +11,7 @@ public class DoctorsConfiguration : IEntityTypeConfiguration<Doctor>
         modelBuilder.HasIndex(e => e.Name);
 
         modelBuilder.Property(e => e.Id)
-            .IsRequired()
-            .HasMaxLength(5);
+            .IsRequired();
 
         modelBuilder.Property(e => e.Name)
             .IsRequired()
@@ -28,5 +27,9 @@ public class DoctorsConfiguration : IEntityTypeConfiguration<Doctor>
         modelBuilder.Property(e => e.Email)
             .IsRequired()
             .HasMaxLength(150);
+
+        modelBuilder.Property(e => e.Major)
+            .IsRequired()
+            .HasMaxLength (150);
     }
 }

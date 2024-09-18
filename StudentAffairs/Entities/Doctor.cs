@@ -1,8 +1,6 @@
 ﻿namespace StudentAffairs;
 
-public class Doctor : BaseEntity
+public class Doctor : Person
 {
-    public string? Mobile { get; set; }
-
-    public string? Email { get; set; }
+    public string? Major { get; set; }
 }

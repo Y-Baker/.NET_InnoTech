@@ -2,39 +2,35 @@
 
 public class StudentValidator : AbstractValidator<Student>
 {
-    public StudentValidator()
+    public StudentValidator(IStringLocalizer<Resource> _localizer, IStudentsUnitOfWork _studentDbSet)
     {
         RuleFor(p => p.Name)
-            .NotEmpty().WithMessage("{PropertyName} Can't Be Empty")
-            .Length(3, 50).WithMessage("{PropertyName} Length({TotalLength}) must be between 3 and 50");
+            .NotEmpty().WithMessage(_localizer["V-NameEmpty"])
+            .Length(3, 50).WithMessage(_localizer["V-NameLength"]);
 
         RuleFor(p => p.Age)
-            .GreaterThanOrEqualTo(8).WithMessage("{PropertyName} can't be less than {ComparisonValue}")
-            .LessThanOrEqualTo(80).WithMessage("{PropertyName} can't be larger than {ComparisonValue}");
+            .NotEmpty().WithMessage(_localizer["V-AgeEmpty"])
+            .GreaterThanOrEqualTo(8).WithMessage(_localizer["V-AgeLess"])
+            .LessThanOrEqualTo(80).WithMessage(_localizer["V-AgeLarge"]);
 
         RuleFor(p => p.Mobile)
-            .NotEmpty().WithMessage("{PropertyName} Can't Be Empty")
-            .Must(ValidMobile!).WithMessage("{PropertyName} use invalid characters");
+            .NotEmpty().WithMessage(_localizer["V-MobileEmpty"])
+            .Must(ValidationUtils.ValidMobile!).WithMessage(_localizer["V-MobileValid"]);
 
         RuleFor(p => p.Email)
-            .NotEmpty().WithMessage("{PropertyName} Can't Be Empty")
-            .EmailAddress().WithMessage("{PropertyName} is not a valid email address");
+            .NotEmpty().WithMessage(_localizer["V-EmailEmpty"])
+            .EmailAddress().WithMessage(_localizer["V-EmailValid"])
+            .MustAsync(async (email, cancellation) =>
+            {
+                bool exists = await _studentDbSet.EmailExists(email);
+                return !exists;
+            }).WithMessage(_localizer["V-EmailExists"]);
 
         RuleFor(p => p.GPA)
-            .NotEmpty().WithMessage("{PropertyName} Can't Be Empty")
-            .GreaterThanOrEqualTo(0).WithMessage("{PropertyName} can't be Negative")
-            .LessThanOrEqualTo(4).WithMessage("{PropertyName} can't be larger than {ComparisonValue}");
+            .NotEmpty().WithMessage(_localizer["V-GPAEmpyt"])
+            .GreaterThanOrEqualTo(0).WithMessage(_localizer["V-GPANegative"])
+            .LessThanOrEqualTo(4).WithMessage(_localizer["V-GPALarge"]);
 
         ClassLevelCascadeMode = CascadeMode.Stop;
-    }
-
-    protected static bool ValidMobile(string mobile)
-    {
-        mobile = mobile
-            .Replace(" ", "")
-            .Replace("-", "")
-            .Replace("+", "");
-        bool  result = mobile.All(char.IsDigit);
-        return result ? true : false;
     }
 }

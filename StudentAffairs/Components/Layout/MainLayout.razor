@@ -1,5 +1,5 @@
 ﻿@inherits LayoutComponentBase
-
+@inject IStringLocalizer<Resource> _localizer
 <div class="page">
     <div class="sidebar">
         <NavMenu />
@@ -11,30 +11,29 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">Home</NavLink>
+                            <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">@_localizer["Home"]</NavLink>
                         </li>
                         <li class="nav-item">
-                            <NavLink class="nav-link" href="/services">Student Services</NavLink>
+                            <NavLink class="nav-link" href="/services">@_localizer["StudentServices"]</NavLink>
                         </li>
                         <li class="nav-item">
-                            <NavLink class="nav-link" href="/events">Events & Activities</NavLink>
+                            <NavLink class="nav-link" href="/events">@_localizer["EventsActivities"]</NavLink>
                         </li>
                         <li class="nav-item">
-                            <NavLink class="nav-link" href="/contact">Contact Us</NavLink>
+                            <NavLink class="nav-link" href="/contact">@_localizer["ContactUs"]</NavLink>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <NavLink class="nav-link" href="/register">Register</NavLink>
+                            <NavLink class="nav-link" href="/register">@_localizer["Register"]</NavLink>
                         </li>
                         <li class="nav-item">
-                            <NavLink class="nav-link" href="/login">Log In</NavLink>
+                            <NavLink class="nav-link" href="/login">@_localizer["LogIn"]</NavLink>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
-
         <article class="content px-4 mt-5">
             @Body
         </article>
@@ -46,3 +45,4 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+

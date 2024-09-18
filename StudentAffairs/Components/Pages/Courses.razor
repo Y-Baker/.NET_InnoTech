@@ -1,0 +1,102 @@
+﻿@page "/courses"
+@inject IStringLocalizer<Resource> _localizer
+@namespace StudentAffairs
+
+<PageTitle>Course</PageTitle>
+
+<h3 class="mb-4">@_localizer["CourseView"]</h3>
+
+@if (_course is not null)
+{
+    @if (isLoading)
+    {
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    }
+    <EditForm Model="@_course" OnValidSubmit="@( async ()=> await HandleValidSubmit() )">
+        <FluentValidationValidator />
+
+        <div class="mb-3">
+            <label for="name" class="form-label">@_localizer["Name"]</label>
+            <InputText class="form-control" @bind-Value="@_course.Name" placeholder=@_localizer["P-Course"] />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">@_localizer["CreditHours"]</label>
+            <InputNumber class="form-control" @bind-Value="@_course.CreaditHours" />
+        </div>
+
+        <div class="mb-3">
+            <label for="instructor" class="form-label">@_localizer["Instructor"]</label>
+            <InputSelect class="form-control" @bind-Value="@_course.InstructorId">
+                <option value=@Guid.Empty>@_localizer["SelectInstructor"]</option>
+                @foreach (Doctor doctor in doctors)
+                {
+                    <option value="@doctor.Id">@doctor.Name</option>
+                }
+            </InputSelect>
+        </div>
+
+        <div class="mb-3">
+            <label for="preRequest" class="form-label">@_localizer["PreRequest"]</label>
+            <InputSelect class="form-control" @bind-Value="@_course.PreRequest">
+                <option value="">@_localizer["None"]</option>
+                @foreach (Course course in courses)
+                {
+                    @if (course.Id != _course.Id)
+                    {
+                        <option value="@course.Id">@course.Name</option>
+                    }
+                }
+            </InputSelect>
+        </div>
+
+        <ValidationSummary />
+
+        <div class="mt-4 d-flex justify-content-between group-button">
+            <button type="submit" class="btn btn-primary">@_localizer["Submit"]</button>
+            <button type="reset" class="btn btn-dark" @onclick="()=>Clear()">@_localizer["Reset"]</button>
+        </div>
+    </EditForm>
+}
+
+<h3 class="mt-5">Registered Courses</h3>
+<div class="container mt-5">
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">@_localizer["Name"]</th>
+                <th scope="col">@_localizer["CreditHours"]</th>
+                <th scope="col">@_localizer["Doctor"]</th>
+                <th scope="col">@_localizer["TotalStudents"]</th>
+                <th scope="col">@_localizer["PreRequest"]</th>
+                <th scope="col">@_localizer["Operations"]</th>
+            </tr>
+        </thead>
+        <tbody class="table-dark">
+            @foreach (Course course in courses ?? new())
+            {
+                <tr>
+                    <td scope="col">@course.Name</td>
+                    <td scope="col">@course.CreaditHours</td>
+                    <td scope="col">@doctorsNames[course.Id]</td>
+                    <td scope="col">@course.NumberOfStudents</td>
+                    <td scope="col">@preRequestCourseNames[course.Id]</td>
+
+                    <td scope="col">
+                        <a href="javascript:void(0)" @onclick="()=>EditCourse(course)" class="m-1">
+                            <i class="bi bi-pencil-fill"></i>
+                        </a>
+                        <a href="javascript:void(0)" @onclick="()=>PrepareForDelete(course)" class="m-1">
+                            <i class="bi bi-trash3 text-danger"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<Modal @ref="modal" Id="@Guid.NewGuid()" Title="@_localizer["Delete"]" Message="@_localizer["ArUSur"]" OnSave="ConfirmDelete" />

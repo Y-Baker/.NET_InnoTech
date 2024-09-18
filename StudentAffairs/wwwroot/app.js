@@ -15,3 +15,11 @@ function startCarousel(id) {
     var carousel = new bootstrap.Carousel(myCarousel);
     carousel.cycle();
 }
+
+function getCultureFromLocalStorage() {
+    return localStorage.getItem('culture') || null;
+}
+
+function setCultureInLocalStorage(value) {
+    localStorage.setItem("culture", value);
+}

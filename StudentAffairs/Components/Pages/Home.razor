@@ -1,12 +1,13 @@
 ﻿@page "/"
 @namespace StudentAffairs
+@inject IStringLocalizer<Resource> _localizer
 
 <PageTitle>Home</PageTitle>
 
 <div class="m-5">
     <div class="jumbotron">
-        <h1 class="display-4">Welcome to the Student Affairs System</h1>
-        <p class="lead">Your hub for all student services, events, and resources.</p>
+        <h1 class="display-4">@_localizer["Home-Title"]</h1>
+        <p class="lead">@_localizer["Home-SubTitle"]</p>
     </div>
 
     <Carousel />

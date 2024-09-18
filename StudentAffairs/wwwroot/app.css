@@ -8,6 +8,14 @@ a, .btn-link {
     color: #006bb7;
 }
 
+.group-button {
+    max-width: 230px;
+    gap: 30px;
+}
+.group-button .btn {
+    min-width: 120px;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #0c49b2 !important;

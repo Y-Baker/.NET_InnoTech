@@ -5,99 +5,76 @@ public partial class Students
     Student? _student = new();
     List<Student>? students = new List<Student>();
     bool isLoading = false;
-    public Modal? modalComponent;
+    Student? _studentToDelete;
+    Modal? modal;
 
-    [Inject] public StudentsAffairsDbContext? _studentsAffairsDbContext { get; set; }
+    [Inject] public IStudentsUnitOfWork? _students { get; set; }
+    [Inject] public IService? _service { get; set; }
 
-    private void TrackMethod([CallerMemberName] string methodName = "")
-    {
-        Console.WriteLine($"{methodName} invoked.");
-    }
     protected async override Task OnInitializedAsync()
     {
-        TrackMethod();
-        try
-        {
-            students = await GetStudentsAsync();
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Request error: {ex.Message}");
-        }
+        Track.TrackMethod();
+        ArgumentNullException.ThrowIfNull(_service, nameof(_service));
+        students = await _service.GetStudents();
+
         await base.OnInitializedAsync();
     }
-    protected async override Task OnAfterRenderAsync(bool firstRender)
-    {
-        Console.WriteLine($"{MethodBase.GetCurrentMethod()?.Name} invoked. firstRender = {firstRender}");
-        await base.OnAfterRenderAsync(firstRender);
-    }
-
     private async Task HandleValidSubmit()
     {
-        TrackMethod();
-        if (isLoading) {
+        Track.TrackMethod();
+
+        if (isLoading)
+        {
             Console.WriteLine("Can't Do New Process While Loading");
             return;
         }
         if (_student is null)
         {
-            Console.WriteLine("Student Not Found");
+            Console.WriteLine($"{nameof(_student)} Not Found");
             return;
         }
 
         isLoading = true;
         StateHasChanged();
+
         try
         {
             string studentSerialized = _student is null ? string.Empty : JsonSerializer.Serialize(_student);
             Student? validStudent = JsonSerializer.Deserialize<Student>(studentSerialized);
-            ArgumentNullException.ThrowIfNull(validStudent);
+            ArgumentNullException.ThrowIfNull(validStudent, nameof(validStudent));
 
-            Student? newStudent = students?.FirstOrDefault(e => e.Name is not null && e.Name.Equals(validStudent?.Name));
+            Student? newStudent = students?.FirstOrDefault(e => e.Id == validStudent.Id);
 
-            ArgumentNullException.ThrowIfNull(_studentsAffairsDbContext);
+            ArgumentNullException.ThrowIfNull(_students, nameof(_students));
             if (newStudent is null)
             {
                 validStudent.Id = Guid.NewGuid();
-                _studentsAffairsDbContext.Students.Add(validStudent);
+                await _students.Create(validStudent);
             }
             else
             {
-                _studentsAffairsDbContext.Students.Update(validStudent);
+                await _students.Update(validStudent);
             }
-            await _studentsAffairsDbContext.SaveChangesAsync();
-
-            if (newStudent is not null)
-                _studentsAffairsDbContext.ChangeTracker.Clear();
-
-            students = await GetStudentsAsync();
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Unexpected error: {ex.Message}");
-            Console.WriteLine("Student Not Saved");
+            Console.WriteLine($"{nameof(_student)} Not Saved");
             throw;
         }
         finally
         {
+            ArgumentNullException.ThrowIfNull(_service, nameof(_service));
+            students = await _service.GetStudents();
             isLoading = false;
+            Clear();
             StateHasChanged();
         }
     }
 
-    private async Task<List<Student>> GetStudentsAsync()
-    {
-        TrackMethod();
-
-        if (_studentsAffairsDbContext is not null)
-            return await _studentsAffairsDbContext.Students.AsNoTracking().ToListAsync();
-        else
-            return new();
-    }
-
     private void EditStudent(Student toBeEditedStudent)
     {
-        TrackMethod();
+        Track.TrackMethod();
 
         string? studentSerialized = JsonSerializer.Serialize(toBeEditedStudent);
         if (studentSerialized is not null)
@@ -106,17 +83,30 @@ public partial class Students
         StateHasChanged();
     }
 
-    public async Task DeleteStudent(Student student)
+    private async void PrepareForDelete(Student student)
     {
-        TrackMethod();
+        ArgumentNullException.ThrowIfNull(_service, nameof(_service));
+        ArgumentNullException.ThrowIfNull(modal, nameof(modal));
+        _studentToDelete = student;
+        await _service.ShowModal(modal);
+    }
+    private async Task ConfirmDelete()
+    {
+        if (_studentToDelete != null)
+        {
+            await DeleteStudent(_studentToDelete);
+        }
+    }
+    private async Task DeleteStudent(Student student)
+    {
+        Track.TrackMethod();
         isLoading = true;
-        ArgumentNullException.ThrowIfNull(student);
+        ArgumentNullException.ThrowIfNull(student, nameof(student));
+        ArgumentNullException.ThrowIfNull(_students, nameof(_students));
 
         try
         {
-            _studentsAffairsDbContext?.Remove(student);
-            ArgumentNullException.ThrowIfNull(_studentsAffairsDbContext);
-            await _studentsAffairsDbContext.SaveChangesAsync();
+            await _students.Delete(student);
         }
         catch (Exception ex)
         {
@@ -125,14 +115,15 @@ public partial class Students
         }
         finally
         {
+            ArgumentNullException.ThrowIfNull(_service, nameof(_service));
+            students = await _service.GetStudents();
             isLoading = false;
             StateHasChanged();
         }
     }
 
-    private async void ShowModal()
+    private void Clear()
     {
-        ArgumentNullException.ThrowIfNull(modalComponent);
-        await modalComponent.ShowModal();
+        _student = new();
     }
 }

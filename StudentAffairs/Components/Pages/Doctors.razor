@@ -1,0 +1,93 @@
+﻿@page "/doctors"
+@namespace StudentAffairs
+@inject IStringLocalizer<Resource> _localizer
+
+<PageTitle>Doctor</PageTitle>
+
+<h3 class="mb-4">@_localizer["DoctorView"]</h3>
+
+@if (_doctor is not null)
+{
+    @if (isLoading)
+    {
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    }
+    <EditForm Model="@_doctor" OnValidSubmit="@( async ()=> await HandleValidSubmit() )">
+
+        <FluentValidationValidator />
+
+        <div class="mb-3">
+            <label for="name" class="form-label">@_localizer["Name"]</label>
+            <InputText class="form-control" @bind-Value="@_doctor.Name" placeholder=@_localizer["P-Name"] />
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">@_localizer["Email"]</label>
+            <InputText type="email" class="form-control" @bind-Value="@_doctor.Email" placeholder=@_localizer["P-Email"] />
+        </div>
+
+        <div class="mb-3">
+            <label for="mobile" class="form-label">@_localizer["Mobile"]</label>
+            <InputText class="form-control" @bind-Value="@_doctor.Mobile" placeholder=@_localizer["P-Mobile"] />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">@_localizer["Age"]</label>
+            <InputNumber class="form-control" @bind-Value="@_doctor.Age" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">@_localizer["Major"]</label>
+            <InputText class="form-control" @bind-Value="@_doctor.Major" placeholder=@_localizer["P-Major"] />
+        </div>
+
+        <ValidationSummary />
+
+        <div class="mt-4 d-flex justify-content-between group-button">
+            <button type="submit" class="btn btn-primary">@_localizer["Submit"]</button>
+            <button type="reset" class="btn btn-dark" @onclick="()=>Clear()">@_localizer["Reset"]</button>
+        </div>
+    </EditForm>
+}
+
+<h3 class="mt-5">@_localizer["RegisteredDoctors"]</h3>
+<div class="container mt-5">
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">@_localizer["Name"]</th>
+                <th scope="col">@_localizer["Email"]</th>
+                <th scope="col">@_localizer["Mobile"]</th>
+                <th scope="col">@_localizer["Age"]</th>
+                <th scope="col">@_localizer["Major"]</th>
+                <th scope="col">@_localizer["Operations"]</th>
+            </tr>
+        </thead>
+        <tbody class="table-dark">
+            @foreach (Doctor doctor in doctors ?? new())
+            {
+                <tr>
+                    <td scope="col">@doctor.Name</td>
+                    <td scope="col">@doctor.Email</td>
+                    <td scope="col">@doctor.Mobile</td>
+                    <td scope="col">@doctor.Age</td>
+                    <td scope="col">@doctor.Major</td>
+                    <td scope="col">
+                        <a href="javascript:void(0)" @onclick="()=>EditDoctor(doctor)" class="m-1">
+                            <i class="bi bi-pencil-fill"></i>
+                        </a>
+                        <a href="javascript:void(0)" @onclick="()=>PrepareForDelete(doctor)" class="m-1">
+                            <i class="bi bi-trash3 text-danger"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<Modal @ref="modal" Id="@Guid.NewGuid()" Title="@_localizer["Delete"]" Message="@_localizer["ArUSur"]"
+    OnSave="ConfirmDelete" />

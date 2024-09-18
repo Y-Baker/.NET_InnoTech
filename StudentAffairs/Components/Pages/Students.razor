@@ -1,10 +1,10 @@
-﻿
-@page "/students"
+﻿@page "/students"
 @namespace StudentAffairs
+@inject IStringLocalizer<Resource> _localizer
 
 <PageTitle>Student</PageTitle>
 
-<h3 class="mb-4">Student View</h3>
+<h3 class="mb-4">@_localizer["StudentView"]</h3>
 
 @if (_student is not null)
 {
@@ -19,49 +19,50 @@
         <FluentValidationValidator />
 
         <div class="mb-3">
-            <label for="name" class="form-label"> Name:</label>
-            <InputText class="form-control" @bind-Value="@_student.Name" placeholder="Enter your name" />
+            <label for="name" class="form-label"> @_localizer["Name"]</label>
+            <InputText class="form-control" @bind-Value="@_student.Name" placeholder=@_localizer["P-Name"] />
         </div>
 
         <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <InputText type="email" class="form-control" @bind-Value="@_student.Email" placeholder="Enter your email" />
+            <label for="email" class="form-label">@_localizer["Email"]</label>
+            <InputText type="email" class="form-control" @bind-Value="@_student.Email" placeholder=@_localizer["P-Email"] />
         </div>
 
         <div class="mb-3">
-            <label for="mobile" class="form-label">Mobile:</label>
-            <InputText class="form-control" @bind-Value="@_student.Mobile" placeholder="Enter your mobile" />
+            <label for="mobile" class="form-label">@_localizer["Mobile"]</label>
+            <InputText class="form-control" @bind-Value="@_student.Mobile" placeholder=@_localizer["P-Mobile"] />
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Age:</label>
-            <InputNumber class="form-control" @bind-Value="@_student.Age"/>
+            <label class="form-label">@_localizer["Age"]</label>
+            <InputNumber class="form-control" @bind-Value="@_student.Age" />
         </div>
 
         <div class="mb-3">
-            <label class="form-label">GPA:</label>
+            <label class="form-label">@_localizer["GPA"]</label>
             <InputNumber class="form-control" @bind-Value="@_student.GPA" />
         </div>
 
         <ValidationSummary />
-        <div class="mt-4 d-flex justify-content-between" style="max-width: 150px">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="reset" class="btn btn-dark">Reset</button>
+
+        <div class="mt-4 d-flex justify-content-between group-button">
+            <button type="submit" class="btn btn-primary">@_localizer["Submit"]</button>
+            <button type="reset" class="btn btn-dark" @onclick="()=>Clear()">@_localizer["Reset"]</button>
         </div>
     </EditForm>
 }
 
-<h3 class="mt-5">Registered Students</h3>
+<h3 class="mt-5">@_localizer["RegisteredStudents"]</h3>
 <div class="container mt-5">
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
             <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Mobile</th>
-                <th scope="col">Age</th>
-                <th scope="col">GPA</th>
-                <th scope="col">Operations</th>
+                <th scope="col">@_localizer["Name"]</th>
+                <th scope="col">@_localizer["Email"]</th>
+                <th scope="col">@_localizer["Mobile"]</th>
+                <th scope="col">@_localizer["Age"]</th>
+                <th scope="col">@_localizer["GPA"]</th>
+                <th scope="col">@_localizer["Operations"]</th>
             </tr>
         </thead>
         <tbody class="table-dark">
@@ -74,15 +75,19 @@
                     <td scope="col">@student.Age</td>
                     <td scope="col">@student.GPA</td>
                     <td scope="col">
-                        <a href="javascript:void(0)" onclick="@( ()=> EditStudent(student) )" class="m-1"><i class="bi bi-pencil-fill"></i> </a>
-                        <a href="javascript:void(0)" @onclick="ShowModal" class="m-1"><i class="bi bi-trash3 text-danger "></i></a>
-                        <Modal @ref="modalComponent" Id="@Guid.NewGuid()" Title="Delete" Message="Are you sure ?" OnSave="()=>DeleteStudent(student)" />
+                        <a href="javascript:void(0)" @onclick="()=>EditStudent(student)" class="m-1">
+                            <i class="bi bi-pencil-fill"></i>
+                        </a>
+                        <a href="javascript:void(0)" @onclick="()=>PrepareForDelete(student)" class="m-1">
+                            <i class="bi bi-trash3 text-danger"></i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-
 </div>
 
-
+<!-- Modal -->
+<Modal @ref="modal" Id="@Guid.NewGuid()" Title="@_localizer["Delete"]" Message="@_localizer["ArUSur"]"
+    OnSave="ConfirmDelete" />

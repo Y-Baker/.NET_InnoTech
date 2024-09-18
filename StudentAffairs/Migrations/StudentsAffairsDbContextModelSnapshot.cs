@@ -22,12 +22,51 @@ namespace StudentAffairs.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("StudentAffairs.Course", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<int?>("CreaditHours")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("InstructorId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar(150)");
+
+                    b.Property<int>("NumberOfStudents")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
+                    b.Property<Guid?>("PreRequest")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InstructorId");
+
+                    b.HasIndex("Name");
+
+                    b.HasIndex("PreRequest");
+
+                    b.ToTable("Courses", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_Creadit_Hours", "`CreaditHours` >= 0 AND `CreaditHours` <= 4");
+                        });
+                });
+
             modelBuilder.Entity("StudentAffairs.Doctor", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(5)
-                        .HasColumnType("char(5)");
+                        .HasColumnType("char(36)");
 
                     b.Property<int>("Age")
                         .ValueGeneratedOnAdd()
@@ -36,6 +75,11 @@ namespace StudentAffairs.Migrations
                         .HasDefaultValue(18);
 
                     b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar(150)");
+
+                    b.Property<string>("Major")
                         .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("varchar(150)");
@@ -101,6 +145,20 @@ namespace StudentAffairs.Migrations
                         {
                             t.HasCheckConstraint("CK_Student_GPA", "`GPA` >= 0 AND `GPA` <= 4");
                         });
+                });
+
+            modelBuilder.Entity("StudentAffairs.Course", b =>
+                {
+                    b.HasOne("StudentAffairs.Doctor", null)
+                        .WithMany()
+                        .HasForeignKey("InstructorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("StudentAffairs.Course", null)
+                        .WithMany()
+                        .HasForeignKey("PreRequest")
+                        .OnDelete(DeleteBehavior.SetNull);
                 });
 #pragma warning restore 612, 618
         }

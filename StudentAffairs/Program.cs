@@ -1,11 +1,8 @@
-using StudentAffairs;
-
-WebApplicationBuilder? webApplicationBuilder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder webApplicationBuilder = WebApplication.CreateBuilder(args);
 
 webApplicationBuilder.Services
                      .AddRazorComponents()
                      .AddInteractiveServerComponents();
-
 
 webApplicationBuilder.Services.AddDbContext<StudentsAffairsDbContext>(options =>
 {
@@ -18,8 +15,27 @@ webApplicationBuilder.Services.AddDbContext<StudentsAffairsDbContext>(options =>
            .EnableSensitiveDataLogging()
            .EnableThreadSafetyChecks();
 });
+string[] supportedCultures = webApplicationBuilder.Configuration.GetSection("SupportedCultures").Get<string[]>() ?? new string[] { "en-US" };
+RequestLocalizationOptions localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
 
-WebApplication? webApplication = webApplicationBuilder.Build();
+webApplicationBuilder.Services.AddControllers();
+webApplicationBuilder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+webApplicationBuilder.Services.AddScoped<IService, Service>();
+webApplicationBuilder.Services.AddScoped<IEmailService, EmailService>();
+webApplicationBuilder.Services.AddScoped<IStudentsRepository, StudentsRepository>();
+webApplicationBuilder.Services.AddScoped<IStudentsUnitOfWork, StudentsUnitOfWork>();
+webApplicationBuilder.Services.AddScoped<IDoctorsRepository, DoctorsRepository>();
+webApplicationBuilder.Services.AddScoped<IDoctorsUnitOfWork, DoctorsUnitOfWork>();
+webApplicationBuilder.Services.AddScoped<ICoursesRepository, CoursesRepository>();
+webApplicationBuilder.Services.AddScoped<ICoursesUnitOfWork, CoursesUnitOfWork>();
+
+WebApplication webApplication = webApplicationBuilder.Build();
+
+webApplication.UseRequestLocalization(localizationOptions);
 
 if (!webApplication.Environment.IsDevelopment())
 {
@@ -28,11 +44,13 @@ if (!webApplication.Environment.IsDevelopment())
 }
 
 webApplication.UseHttpsRedirection();
-
 webApplication.UseStaticFiles();
 webApplication.UseAntiforgery();
-    
+
+webApplication.MapControllers();
+
 webApplication.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 webApplication.Run();
+ 

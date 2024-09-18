@@ -5,9 +5,8 @@ public class StudentsConfiguration : IEntityTypeConfiguration<Student>
     public void Configure(EntityTypeBuilder<Student> modelBuilder)
     {
         modelBuilder.ToTable("Students", t =>
-        {
-            t.HasCheckConstraint("CK_Student_GPA", "`GPA` >= 0 AND `GPA` <= 4");
-        });
+            t.HasCheckConstraint("CK_Student_GPA", "`GPA` >= 0 AND `GPA` <= 4")
+        );
 
         modelBuilder.HasKey(e => e.Id);
         modelBuilder.HasIndex(e => e.Email).IsUnique();

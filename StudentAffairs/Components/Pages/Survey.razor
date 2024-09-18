@@ -1,0 +1,111 @@
+﻿@page "/survey"
+@namespace StudentAffairs
+@inject IStringLocalizer<Resource> _localizer
+
+<PageTitle>Survey</PageTitle>
+
+
+<div class="m-3">
+    <div class="jumbotron">
+        <h1 class="display-4">@_localizer["Survey"]</h1>
+        <p class="lead">@_localizer["SurveyTitle"]</p>
+    </div>
+
+    @if (_survey is not null)
+    {
+        @if (isLoading)
+        {
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        }
+        <EditForm Model="@_survey" OnValidSubmit="@( async ()=> await HandleValidSubmit() )">
+            <FluentValidationValidator />
+
+            <div class="mb-3">
+                <label for="year" class="form-label">@_localizer["AcademicYear"]</label>
+                <InputSelect class="form-control" @bind-Value="@_survey.AcademicYear">
+                    <option value="">@_localizer["SelectYear"]</option>
+                    @foreach (string year in years)
+                    {
+                        <option value="@year">@year</option>
+                    }
+                </InputSelect>
+            </div>
+
+            <div class="mb-3">
+                <label for="semester" class="form-label">@_localizer["Semester"]</label>
+                <InputSelect class="form-control" @bind-Value="@_survey.Semester">
+                    <option value="">@_localizer["SelectSemester"]</option>
+                    @foreach (SemesterType semester in Enum.GetValues(typeof(SemesterType)))
+                    {
+                        <option value="@semester">@semester.ToString()</option>
+                    }
+                </InputSelect>
+            </div>
+
+            <div class="mb-3">
+                <label for="course" class="form-label">@_localizer["Course"]</label>
+                <InputSelect class="form-control" @bind-Value="@_survey.CourseId">
+                    <option value=@Guid.Empty>@_localizer["SelectCourse"]</option>
+                    @foreach (Course course in courses)
+                    {
+                        <option value="@course.Id">@course.Name</option>
+                    }
+                </InputSelect>
+            </div>
+
+            @if (ShowSurveyInputs)
+            {
+                <div class="row">
+                    <div class="col-5">
+                        <h3 class="mt-5">@_localizer["Rate"]</h3>
+
+                        <div class="form-group">
+                            <label for="contentUpdate">@_localizer["Survey-Content"]</label>
+                            <input type="range" min="1" max="10" @bind="_survey.ContentUpdateRating" class="form-range" />
+                            <span>@_survey.ContentUpdateRating</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contentUpdate">@_localizer["Survey-Expectation"]</label>
+                            <input type="range" min="1" max="10" @bind="_survey.ExpectationRating" class="form-range" />
+                            <span>@_survey.ExpectationRating</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contentUpdate">@_localizer["Survey-Lap"]</label>
+                            <input type="range" min="1" max="10" @bind="_survey.LapRating" class="form-range" />
+                            <span>@_survey.LapRating</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contentUpdate">@_localizer["Survey-Instructor"]</label>
+                            <input type="range" min="1" max="10" @bind="_survey.InstructorRation" class="form-range" />
+                            <span>@_survey.InstructorRation</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contentUpdate">@_localizer["Survey-Overall"]</label>
+                            <input type="range" min="1" max="10" @bind="_survey.ExperienceRating" class="form-range" />
+                            <span>@_survey.ExperienceRating</span>
+                        </div>
+                    </div>
+                    <div class="col-7 p-5 d-flex justify-content-center align-items-center">
+                        <img src="img/thank-you.jpg" class="img-fluid mw-100 h-auto" alt="Thank you image" />
+                    </div>
+                </div>
+
+                <div class="mb-5 mt-3">
+                    <label for="surveyOthers" class="form-label h3">@_localizer["Survey-Others"]</label>
+                    <InputTextArea class="form-control mt-2" style="height:100px;" @bind-Value="@_survey.Others" placeholder=@_localizer["P-Survey"]></InputTextArea>
+                </div>
+
+            }
+            <ValidationSummary />
+
+            <div class="mt-4 d-flex justify-content-between group-button">
+                <button type="submit" class="btn btn-primary">@_localizer["Submit"]</button>
+                <button type="reset" class="btn btn-dark" @onclick="()=>Clear()">@_localizer["Reset"]</button>
+            </div>
+        </EditForm>
+    }
+</div>
+
+
