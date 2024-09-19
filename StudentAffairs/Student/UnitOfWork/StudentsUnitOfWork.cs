@@ -1,10 +1,10 @@
-﻿namespace StudentAffairs;
+﻿namespace StudentDomain;
 
-public class StudentsUnitOfWork : UserUnitOfWork<Student> , IStudentsUnitOfWork
+public class StudentsUnitOfWork : UserUnitOfWork<Student>, IStudentsUnitOfWork
 {
     private readonly StudentsAffairsDbContext _context;
     private readonly IStudentsRepository _studentsRepository;
-    public StudentsUnitOfWork(StudentsAffairsDbContext context, IStudentsRepository studentsRepository) : base (context, studentsRepository)
+    public StudentsUnitOfWork(StudentsAffairsDbContext context, IStudentsRepository studentsRepository) : base(context, studentsRepository)
     {
         _context = context;
         _studentsRepository = studentsRepository;

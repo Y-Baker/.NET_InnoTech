@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace CourseDomain;
 
 public class CourseConfigurations : BaseConfiguration<Course>
 {
@@ -6,7 +6,7 @@ public class CourseConfigurations : BaseConfiguration<Course>
     {
         base.Configure(modelBuilder);
 
-        modelBuilder.ToTable("Courses", t => 
+        modelBuilder.ToTable("Courses", t =>
             t.HasCheckConstraint("CK_Creadit_Hours", "`CreaditHours` >= 0 AND `CreaditHours` <= 4")
         );
 

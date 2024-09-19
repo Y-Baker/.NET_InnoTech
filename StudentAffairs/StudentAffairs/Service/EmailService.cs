@@ -1,6 +1,8 @@
-﻿using System.Net.Mail;
+﻿using Course;
+using EntityDefinition;
+using System.Net.Mail;
 
-namespace StudentAffairs;
+namespace StudentAffairs.Service;
 public interface IEmailService
 {
     Task SendSurvey(SurveyData survey);
@@ -19,11 +21,11 @@ public class EmailService : IEmailService
     }
 
     public async Task SendSurvey(SurveyData survey)
-    
+
     {
         Course course = await _service.GetCourse(survey.CourseId);
         Doctor doctor = await _service.GetInstructor(course);
-        
+
         string emailContent = await FormatSurveyEmail(survey);
 
         string? instructorEmail = doctor.Email;

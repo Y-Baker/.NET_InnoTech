@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace CourseDomain;
 
 public interface ICourseService
 {
@@ -23,7 +23,7 @@ public class CourseService : ICourseService
 
     public async Task<List<Doctor>> GetDoctors()
     {
-        return (List<Doctor>)await context.Doctors.ToListAsync();
+        return await context.Doctors.ToListAsync();
     }
     public async Task<List<Course>> GetCourses()
     {

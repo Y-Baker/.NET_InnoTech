@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace UserDomain;
 
 public class UserUnitOfWork<TEntity> : UnitOfWork<TEntity>, IUserUnitOfWork<TEntity>
     where TEntity : User

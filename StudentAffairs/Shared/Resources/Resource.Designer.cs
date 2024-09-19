@@ -8,7 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace StudentAffairs {
+namespace Shared
+{
     using System;
     
     

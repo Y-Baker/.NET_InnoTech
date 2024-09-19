@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace UserDomain;
 
 public interface IUserUnitOfWork<TEntity> : IUnitOfWork<TEntity>
     where TEntity : User

@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace StudentAffairs;
+﻿namespace StudentDomain;
 
 public interface IStudentService
 {

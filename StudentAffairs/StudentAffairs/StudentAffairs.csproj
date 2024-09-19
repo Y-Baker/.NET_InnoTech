@@ -25,12 +25,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Course\Course.csproj" />
-	  <ProjectReference Include="..\Doctors\Doctor.csproj" />
+	  <ProjectReference Include="..\Course\CourseDomain.csproj" />
+	  <ProjectReference Include="..\Doctors\DoctorDomain.csproj" />
 	  <ProjectReference Include="..\EntityDefinition\EntityDefinition.csproj" />
 	  <ProjectReference Include="..\Shared\Shared.csproj" />
-	  <ProjectReference Include="..\Student\Student.csproj" />
-	  <ProjectReference Include="..\User\User.csproj" />
+	  <ProjectReference Include="..\Student\StudentDomain.csproj" />
+	  <ProjectReference Include="..\User\UserDomain.csproj" />
 	</ItemGroup>
 
 </Project>

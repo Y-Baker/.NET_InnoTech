@@ -1,4 +1,6 @@
-﻿namespace StudentAffairs;
+﻿using EntityDefinition;
+
+namespace StudentAffairs;
 
 public class StudentsAffairsDbContext : DbContext
 {

@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace EntityDefinition;
 
 public abstract class User : BaseEntity
 {

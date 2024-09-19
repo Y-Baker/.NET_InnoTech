@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace CourseDomain;
 
 public class CoursesUnitOfWork : UnitOfWork<Course>, ICoursesUnitOfWork
 {

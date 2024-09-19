@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace UserDomain;
 
 public class UserRepository<TEntity> : Repository<TEntity>, IUserRepository<TEntity>
     where TEntity : User

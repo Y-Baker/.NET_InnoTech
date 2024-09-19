@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace DoctorDomain;
 
 public class DoctorValidator : UserValidator<Doctor>
 {

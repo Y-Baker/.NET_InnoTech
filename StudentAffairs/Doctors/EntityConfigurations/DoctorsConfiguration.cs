@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace DoctorDomain;
 
 public class DoctorsConfiguration : UserConfiguration<Doctor>
 {
@@ -10,6 +10,6 @@ public class DoctorsConfiguration : UserConfiguration<Doctor>
 
         modelBuilder.Property(e => e.Major)
                     .IsRequired()
-                    .HasMaxLength (150);
+                    .HasMaxLength(150);
     }
 }

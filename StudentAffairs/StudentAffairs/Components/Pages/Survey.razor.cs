@@ -1,3 +1,8 @@
+using Course;
+using EntityDefinition;
+using Shared.utils;
+using StudentAffairs.Service;
+
 namespace StudentAffairs;
 
 public partial class Survey

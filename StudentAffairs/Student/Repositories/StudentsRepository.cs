@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace StudentDomain;
 
 public class StudentsRepository : UserRepository<Student>, IStudentsRepository
 {

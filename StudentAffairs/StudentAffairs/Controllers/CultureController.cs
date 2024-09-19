@@ -1,4 +1,4 @@
-﻿namespace BlazorLocalization;
+﻿namespace StudentAffairs.Controllers;
 
 [Microsoft.AspNetCore.Mvc.Route("[controller]/[action]")]
 public class CultureController : Controller

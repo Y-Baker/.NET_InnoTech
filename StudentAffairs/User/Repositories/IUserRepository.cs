@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace UserDomain;
 
 public interface IUserRepository<TEntity> : IRepository<TEntity>
     where TEntity : User

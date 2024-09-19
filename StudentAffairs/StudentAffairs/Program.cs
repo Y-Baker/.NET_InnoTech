@@ -1,4 +1,15 @@
+using Course;
+using Course.Repositories;
+using Course.UnitOfWork;
+using Doctor;
+using Doctor.Repositories;
+using Doctor.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Shared.utils;
+using Student;
+using Student.Repositories;
+using Student.UnitOfWork;
+using StudentAffairs.Service;
 
 WebApplicationBuilder webApplicationBuilder = WebApplication.CreateBuilder(args);
 

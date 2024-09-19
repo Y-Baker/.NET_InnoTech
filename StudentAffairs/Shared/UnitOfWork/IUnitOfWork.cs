@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace Shared;
 
 public interface IUnitOfWork<TEntity>
     where TEntity : BaseEntity

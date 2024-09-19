@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace EntityDefinition;
 public class Course : BaseEntity
 {
     public int? CreaditHours { get; set; }

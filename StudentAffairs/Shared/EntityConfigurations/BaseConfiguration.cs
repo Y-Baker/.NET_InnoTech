@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace Shared;
 
 public abstract class BaseConfiguration<TEntity> : IEntityTypeConfiguration<TEntity>
         where TEntity : BaseEntity

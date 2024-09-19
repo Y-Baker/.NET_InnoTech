@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace Shared;
 
 public abstract class BaseValidator<TEntity> : AbstractValidator<TEntity>
     where TEntity : BaseEntity

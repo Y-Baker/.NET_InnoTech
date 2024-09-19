@@ -8,3 +8,4 @@ global using Microsoft.Extensions.Localization;
 global using System.Runtime.CompilerServices;
 global using Microsoft.AspNetCore.Components;
 global using Microsoft.JSInterop;
+global using EntityDefinition;

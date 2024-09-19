@@ -1,4 +1,6 @@
-﻿namespace StudentAffairs;
+﻿using EntityDefinition;
+
+namespace Shared;
 public class StudentsAffairsDbContext : DbContext
 {
     public StudentsAffairsDbContext(DbContextOptions<StudentsAffairsDbContext> options) : base(options) { }
@@ -12,7 +14,7 @@ public class StudentsAffairsDbContext : DbContext
         Assembly currentAssembly = Assembly.GetExecutingAssembly();
         HashSet<Assembly> referencedAssemblies = currentAssembly.GetReferencedAssemblies()
                                                                 .Select(x => Assembly.Load(x))
-                                                                .ToHashSet() ?? new ();
+                                                                .ToHashSet() ?? new();
         referencedAssemblies.Add(currentAssembly);
 
         modelBuilder.Ignore<BaseEntity>();

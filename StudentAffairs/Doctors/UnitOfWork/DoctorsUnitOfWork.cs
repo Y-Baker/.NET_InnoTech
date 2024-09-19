@@ -1,6 +1,6 @@
-﻿namespace StudentAffairs;
+﻿namespace DoctorDomain;
 
-public class DoctorsUnitOfWork : UserUnitOfWork<Doctor> , IDoctorsUnitOfWork
+public class DoctorsUnitOfWork : UserUnitOfWork<Doctor>, IDoctorsUnitOfWork
 {
     private readonly StudentsAffairsDbContext _context;
     private readonly IDoctorsRepository _repository;

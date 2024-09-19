@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace DoctorDomain;
 
 public interface IDoctorsRepository : IUserRepository<Doctor>
 {

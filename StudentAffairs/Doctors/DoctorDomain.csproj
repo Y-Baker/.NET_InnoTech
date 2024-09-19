@@ -20,7 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EntityDefinition\EntityDefinition.csproj" />
     <ProjectReference Include="..\Shared\Shared.csproj" />
-    <ProjectReference Include="..\User\User.csproj" />
+    <ProjectReference Include="..\User\UserDomain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace UserDomain;
 
 public abstract class UserConfiguration<TEntity> : BaseConfiguration<TEntity>
     where TEntity : User

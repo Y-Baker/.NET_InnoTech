@@ -1,4 +1,4 @@
-namespace StudentAffairs;
+﻿namespace CourseDomain;
 
 public partial class Courses
 {
@@ -52,7 +52,7 @@ public partial class Courses
             Console.WriteLine($"{nameof(_course)} Not Found");
             return;
         }
-        
+
         isLoading = true;
         StateHasChanged();
 

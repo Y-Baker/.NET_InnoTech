@@ -1,5 +1,5 @@
-﻿namespace StudentAffairs;
-public interface IRepository<TEntity> 
+﻿namespace Shared;
+public interface IRepository<TEntity>
     where TEntity : BaseEntity
 {
     Task Insert(TEntity entity);

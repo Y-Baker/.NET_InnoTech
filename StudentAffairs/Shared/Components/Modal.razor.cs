@@ -1,4 +1,4 @@
-namespace StudentAffairs;
+namespace Shared;
 
 public partial class Modal
 {

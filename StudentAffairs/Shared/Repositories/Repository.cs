@@ -1,6 +1,6 @@
-﻿namespace StudentAffairs;
+﻿namespace Shared;
 
-public class Repository<TEntity> : IRepository<TEntity> 
+public class Repository<TEntity> : IRepository<TEntity>
     where TEntity : BaseEntity
 {
     protected readonly StudentsAffairsDbContext _context;

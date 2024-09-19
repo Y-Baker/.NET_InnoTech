@@ -1,6 +1,6 @@
 ﻿@page "/courses"
 @inject IStringLocalizer<Resource> _localizer
-@namespace StudentAffairs
+@namespace CourseDomain
 
 <PageTitle>Course</PageTitle>
 
@@ -99,4 +99,4 @@
 </div>
 
 <!-- Modal -->
-@* <Modal @ref="modal" Id="@Guid.NewGuid()" Title="@_localizer["Delete"]" Message="@_localizer["ArUSur"]" OnSave="ConfirmDelete" /> *@
+<Modal @ref="modal" Id="@Guid.NewGuid()" Title="@_localizer["Delete"]" Message="@_localizer["ArUSur"]" OnSave="ConfirmDelete" />

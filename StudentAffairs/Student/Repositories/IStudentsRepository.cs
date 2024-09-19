@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace StudentDomain;
 
 public interface IStudentsRepository : IUserRepository<Student>
 {

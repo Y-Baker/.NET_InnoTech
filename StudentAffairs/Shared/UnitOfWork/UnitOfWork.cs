@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace Shared;
 
 public class UnitOfWork<TEntity> : IUnitOfWork<TEntity>
     where TEntity : BaseEntity
@@ -24,7 +24,7 @@ public class UnitOfWork<TEntity> : IUnitOfWork<TEntity>
             }
             catch (Exception exception)
             {
-                transaction.Rollback(); 
+                transaction.Rollback();
                 Console.WriteLine(exception.Message);
             }
         }

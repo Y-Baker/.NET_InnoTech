@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace UserDomain;
 
 public abstract class UserValidator<TEntity> : BaseValidator<TEntity>
     where TEntity : User

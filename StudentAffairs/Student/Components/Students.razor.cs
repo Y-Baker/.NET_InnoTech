@@ -1,6 +1,4 @@
-using Microsoft.AspNetCore.Components;
-
-namespace StudentAffairs;
+namespace StudentDomain;
 
 public partial class Students
 {

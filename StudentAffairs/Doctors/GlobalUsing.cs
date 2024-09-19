@@ -1,5 +1,4 @@
-﻿global using StudentAffairs;
-global using Microsoft.AspNetCore.Components;
+﻿global using Microsoft.AspNetCore.Components;
 global using Microsoft.JSInterop;
 global using System.Reflection;
 global using System.Text.Json;
@@ -13,3 +12,6 @@ global using Microsoft.Extensions.Localization;
 global using System.Net.Mail;
 global using System.Net;
 global using FluentValidation;
+global using Shared;
+global using UserDomain;
+global using EntityDefinition;

@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs;
+﻿namespace CourseDomain;
 
 public class CoursesRepository : Repository<Course>, ICoursesRepository
 {
