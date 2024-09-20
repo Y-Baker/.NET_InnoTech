@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs.Controllers;
+﻿namespace StudentAffairs;
 
 [Microsoft.AspNetCore.Mvc.Route("[controller]/[action]")]
 public class CultureController : Controller

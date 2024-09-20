@@ -1,4 +1,4 @@
-﻿namespace StudentAffairs.Validation;
+﻿namespace StudentAffairs;
 
 public class SurveyValidator : AbstractValidator<SurveyData>
 {

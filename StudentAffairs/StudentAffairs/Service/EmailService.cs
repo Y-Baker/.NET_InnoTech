@@ -1,8 +1,4 @@
-﻿using Course;
-using EntityDefinition;
-using System.Net.Mail;
-
-namespace StudentAffairs.Service;
+﻿namespace StudentAffairs;
 public interface IEmailService
 {
     Task SendSurvey(SurveyData survey);

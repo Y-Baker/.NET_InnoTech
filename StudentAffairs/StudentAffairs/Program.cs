@@ -1,16 +1,3 @@
-using Course;
-using Course.Repositories;
-using Course.UnitOfWork;
-using Doctor;
-using Doctor.Repositories;
-using Doctor.UnitOfWork;
-using Microsoft.EntityFrameworkCore;
-using Shared.utils;
-using Student;
-using Student.Repositories;
-using Student.UnitOfWork;
-using StudentAffairs.Service;
-
 WebApplicationBuilder webApplicationBuilder = WebApplication.CreateBuilder(args);
 
 webApplicationBuilder.Services
@@ -20,14 +7,16 @@ webApplicationBuilder.Services
 ConnectionStrings? connectionStrings = webApplicationBuilder.Configuration.GetSection("ConnectionStrings").Get<ConnectionStrings>();
 ArgumentNullException.ThrowIfNull(connectionStrings);
 
-//webApplicationBuilder.Services.AddDbContext<StudentsAffairsDbContext>(option =>
-//{
-//    option.UseSqlServer(connectionStrings.SQLServer)
-//          .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
-//          .EnableServiceProviderCaching()
-//          .EnableDetailedErrors()
-//          .EnableThreadSafetyChecks();
-//});
+
+// webApplicationBuilder.Services.AddDbContext<StudentsAffairsDbContext>(options =>
+// {
+//     options.UseSqlServer(connectionStrings.SQLServer)
+//            .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
+//            .EnableServiceProviderCaching()
+//            .EnableDetailedErrors()
+//            .EnableThreadSafetyChecks();
+// });
+
 webApplicationBuilder.Services.AddDbContext<StudentsAffairsDbContext>(options =>
 {
     options.UseMySql(connectionStrings.MySQL, ServerVersion.AutoDetect(connectionStrings.MySQL))
@@ -36,6 +25,7 @@ webApplicationBuilder.Services.AddDbContext<StudentsAffairsDbContext>(options =>
            .EnableDetailedErrors()
            .EnableThreadSafetyChecks();
 });
+
 string[] supportedCultures = webApplicationBuilder.Configuration.GetSection("SupportedCultures").Get<string[]>() ?? new string[] { "en-US" };
 RequestLocalizationOptions localizationOptions = new RequestLocalizationOptions()
     .SetDefaultCulture(supportedCultures[0])

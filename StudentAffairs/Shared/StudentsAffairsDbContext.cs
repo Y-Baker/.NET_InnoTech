@@ -1,6 +1,4 @@
-﻿using EntityDefinition;
-
-namespace Shared;
+﻿namespace Shared;
 public class StudentsAffairsDbContext : DbContext
 {
     public StudentsAffairsDbContext(DbContextOptions<StudentsAffairsDbContext> options) : base(options) { }
