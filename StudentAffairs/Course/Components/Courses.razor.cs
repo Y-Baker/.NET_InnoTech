@@ -1,17 +1,18 @@
 ﻿namespace CourseDomain;
 
-public partial class Courses
+public partial class Courses : ComponentBase
 {
     Course? _course = new();
     List<Course> courses = new();
     List<Doctor> doctors = new();
     bool isLoading = false;
     Course? _courseToDelete;
-    Modal? modal;
+    Modal? modal = new Modal();
 
     private Dictionary<Guid, string> doctorsNames = new();
     private Dictionary<Guid, string> preRequestCourseNames = new();
 
+    [Inject] public IStringLocalizer<Resource> localizer { get; set; } = default!;
     [Inject] public ICoursesUnitOfWork? _courses { get; set; }
     [Inject] public ICourseService? _service { get; set; }
 
@@ -30,11 +31,11 @@ public partial class Courses
             {
                 Course? preRequestCourse = await _service.GetCourse(course.PreRequest ?? Guid.Empty);
 
-                preRequestCourseNames[course.Id] = preRequestCourse.Name ?? _localizer["None"];
+                preRequestCourseNames[course.Id] = preRequestCourse.Name ?? localizer["None"];
             }
             else
             {
-                preRequestCourseNames[course.Id] = _localizer["None"];
+                preRequestCourseNames[course.Id] = localizer["None"];
             }
         }
 
@@ -83,11 +84,11 @@ public partial class Courses
             {
                 Course? preRequestCourse = await _service.GetCourse(validCourse.PreRequest ?? Guid.Empty);
 
-                preRequestCourseNames[validCourse.Id] = preRequestCourse.Name ?? _localizer["None"];
+                preRequestCourseNames[validCourse.Id] = preRequestCourse.Name ?? localizer["None"];
             }
             else
             {
-                preRequestCourseNames[validCourse.Id] = _localizer["None"];
+                preRequestCourseNames[validCourse.Id] = localizer["None"];
             }
         }
         catch (Exception ex)

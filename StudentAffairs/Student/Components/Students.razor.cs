@@ -1,12 +1,12 @@
 namespace StudentDomain;
 
-public partial class Students
+public partial class Students : ComponentBase
 {
     Student? _student = new();
     List<Student>? students = new List<Student>();
     bool isLoading = false;
     Student? _studentToDelete;
-    Modal? modal;
+    Modal? modal = new Modal();
     [Inject] public IStudentsUnitOfWork? _students { get; set; }
     [Inject] public IStudentService? _service { get; set; }
 

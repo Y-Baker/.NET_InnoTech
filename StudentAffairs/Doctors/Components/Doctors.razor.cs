@@ -1,12 +1,12 @@
 namespace DoctorDomain;
 
-public partial class Doctors
+public partial class Doctors : ComponentBase
 {
     Doctor? _doctor = new();
     List<Doctor>? doctors = new();
     bool isLoading = false;
     Doctor? _doctorToDelete;
-    Modal? modal;
+    Modal? modal = new Modal();
 
     [Inject] public IDoctorsUnitOfWork? _doctors { get; set; }
     [Inject] public IDoctorService? _service { get; set; }
